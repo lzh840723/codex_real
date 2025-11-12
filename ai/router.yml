@@ -1,0 +1,15 @@
+slice:
+  margin_default: 15
+  margin_min: 8
+  margin_max: 20
+  fn_small_lines: 40      # 函数体 <40 行 → 用较小边距
+  fn_large_lines: 200     # 函数体 >200 行 → 用较大边距
+  lang_bumps:             # 语言额外加成（可选）
+    ".java": 2
+    ".ts": 1
+    ".py": 0
+
+maps:
+  version: 1              # hcml.maps.json 的版本号（用于哈希头）
+rules:
+  version: 1              # hcml.rules.txt 的版本号（用于哈希头）

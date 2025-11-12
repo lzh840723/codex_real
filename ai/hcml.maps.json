@@ -1,0 +1,24 @@
+{
+  "c_map": {
+    "0": "no_schema",
+    "1": "perf_ok",
+    "2": "rollback",
+    "3": "multi_ok",
+    "4": "backward_compat",
+    "5": "no_db_write"
+  },
+  "k_map": {
+    "0": "unit_green",
+    "1": "it_green",
+    "2": "no_changes_in_dao_db",
+    "3": "lint_ok",
+    "4": "ci_green"
+  },
+  "n_map": {
+    "0": "patch_fn",
+    "1": "add_tests",
+    "2": "temp_debug_once",
+    "3": "update_docs",
+    "4": "run_cmds"
+  }
+}
