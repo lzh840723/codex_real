@@ -1,0 +1,19 @@
+# 状态和日志文件
+/state/
+/tmp/
+*.log
+*.snapshot
+*.jsonl
+
+# 缓存文件
+.cache.json
+
+# 操作系统和编辑器文件
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Python 缓存
+*.pyc
+__pycache__/

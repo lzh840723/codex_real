@@ -1,0 +1,4 @@
+在文档末尾附 Design_Notes（≤10行）:
+- Key Decisions（3–5 条）
+- Open Risks（1–2 条）
+- Assumptions（1–3 条）

@@ -1,0 +1,6 @@
+# Encoding rules (compact):
+# - c/k/n may use numeric codes per /ai/hcml.maps.json (c_map/k_map/n_map).
+# - If a numeric array is given, interpret via the maps; if strings are given, use as-is.
+# Header hints:
+# - header:{rules_hash:<8>, maps_hash:<8>, aliases_hash:<8>} may appear.
+#   If hashes unchanged, do not require resending full rules/aliases.
