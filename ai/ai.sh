@@ -72,15 +72,18 @@ emit_header(){
   echo "header:{rules_hash:$RULES_HASH, maps_hash:$MAPS_HASH, aliases_hash:$ALIASES_HASH}"
 }
 
-# 原样镜像供应商面板到 .raw/*.log (v1.1)
+# 原样镜像供应商面板到 .raw/*.log (v1.1, 已修复兼容性)
 run_and_panel(){ # 用法: run_and_panel <tag> <cmd...>
   local tag="$1"; shift
   local logfile="$RAW_DIR/${STAMP}_${tag}.log"
   if [ "$RAW" = "1" ]; then
-    if _has script; then
-      script -q -f "$logfile" "$@" | tee /dev/tty
-    elif _has stdbuf; then
+    # 优先使用 stdbuf，因为它在不同系统上对于行缓冲的行为更一致
+    if _has stdbuf; then
       stdbuf -oL -eL "$@" 2>&1 | tee "$logfile"
+    # 其次尝试 script，但不使用 -f 标志，以兼容 BSD 版本
+    elif _has script; then
+      script -q "$logfile" "$@"
+    # 最后回退到简单的 tee
     else
       "$@" 2>&1 | tee "$logfile"
     fi
